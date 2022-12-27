@@ -1,1 +1,1 @@
-### Aim of the experiment
+To Find Numerical differentiations with evenly spaced points.
