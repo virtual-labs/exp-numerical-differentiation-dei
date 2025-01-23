@@ -1,31 +1,447 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>Numerical Differentiation </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
 
-    <link rel="stylesheet" href="./css/main.css">
-	<script src="js/calculation.js" type="text/javascript"></script>
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            background-color: #f5f5f5;
+        }
 
-	<script src="js/main.js" type="text/javascript"></script>
-  
+        .container {
+            height: 100vh;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-height: 100vh;
+            overflow: hidden;
+        }
+
+        .title {
+            text-align: center;
+            padding: 10px;
+            font-size: 24px;
+            color: white;
+            background-color: #2c3e50;
+            width: 60%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            flex-shrink: 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 10px;
+            max-height: calc(100vh - 100px);
+            max-width: 910px;
+            width: 90%;
+            margin: 0 auto;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .input-box, .output-box {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-width: 300px;
+            max-height: 100%;
+            overflow: hidden;
+        }
+
+        .examples-box {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .examples-box h4 {
+            color: #495057;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .example-item {
+            color: #666;
+            margin: 4px 0;
+            line-height: 1.4;
+        }
+
+        .example-item code {
+            background-color: #e9ecef;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 3px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #2196F3;
+            box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
+        }
+
+        button {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: auto;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #2c3e50;
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+
+        .scroll-container {
+            overflow-y: auto;
+            flex-grow: 1;
+            margin-bottom: 10px;
+            padding-right: 5px;
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .scroll-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb:hover {
+            background: #777;
+        }
+
+        .results-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .numerical-results {
+            margin-bottom: 15px;
+            max-height: 40%;
+            overflow-y: auto;
+            flex-shrink: 0;
+        }
+
+        .numerical-results::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .numerical-results::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .numerical-results::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .numerical-results::-webkit-scrollbar-thumb:hover {
+            background: #777;
+        }
+
+        .chart-container {
+            flex-grow: 1;
+            min-height: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f5f5f5;
+            font-weight: 600;
+            color: #333;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        #errorMessage {
+            color: #dc3545;
+            margin-top: 10px;
+            font-size: 14px;
+            padding: 8px;
+            border-radius: 4px;
+            background-color: #fff3f4;
+            border: 1px solid #ffdee2;
+            display: none;
+        }
+
+        #errorMessage:not(:empty) {
+            display: block;
+        }
+
+        h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                max-height: none;
+                height: auto;
+            }
+
+            .input-box, .output-box {
+                max-height: calc((100vh - 150px) / 2);
+            }
+        }
+    </style>
 </head>
 <body>
-	<div id="top"><h1>Numeric Differentiation</h1>
-		<div id="function">
-			<label>y = </label><input type="text" value="" id="input" /><br /><br />
-		<span>Example : d/dx (x+4)^2*(x-6)+60sinx </span>
-	  </div>
-		<div id="range">
-			<div class="rangeSection">From <input type="text" value="" placeholder="-10" id="x1" /> &lt; x &lt; <input type="text" value="" placeholder="10" id="x2" /></div>
-		<div class="rangeSection">and <input type="text" placeholder="auto" value="" id="y1" /> &lt; y &lt; <input type="text" placeholder="auto" value="" id="y2" /></div>
-		</div>
-		<input type="button" value="Simulate" id="graph" />
-	</div>
-	<div id="wrapper">
-	  <div id="result"></div>
-	</div>
-		<!-- Your code goes here-->
+    <div class="container">
+        <div class="title">Numerical Differentiation Experiment</div>
+        <div class="grid-container">
+            <div class="input-box">
+                <h3><center>Input Parameters</h3>
+                <div class="examples-box">
+                    <h4>Example Functions:</h4>
+                    <div class="example-item">• Polynomial: <code>x^2</code>, <code>2*x^3 - 3*x + 1</code></div>
+                    <div class="example-item">• Trigonometric: <code>sin(x)</code>, <code>cos(x)</code>, <code>tan(x)</code></div>
+                    <div class="example-item">• Exponential: <code>exp(x)</code>, <code>2^x</code></div>
+                    <div class="example-item">• Combined: <code>sin(x^2)</code>, <code>x*exp(x)</code></div>
+                    <div class="example-item">• Logarithmic: <code>log(x)</code>, <code>ln(x)</code></div>
+                </div>
+                <div class="scroll-container">
+                    <div class="form-group">
+                        <label for="function">Function f(x):</label>
+                        <input type="text" id="function" value="x^2" placeholder="Enter function (e.g., x^2)">
+                    </div>
+                    <div class="form-group">
+                        <label for="xStart">Start Point:</label>
+                        <input type="number" id="xStart" value="0" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="xEnd">End Point:</label>
+                        <input type="number" id="xEnd" value="5" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="numPoints">Number of Points:</label>
+                        <input type="number" id="numPoints" value="10" min="3">
+                    </div>
+                    <div class="form-group">
+                        <label for="method">Differentiation Method:</label>
+                        <select id="method">
+                            <option value="forward">Forward Difference</option>
+                            <option value="backward">Backward Difference</option>
+                            <option value="central">Central Difference</option>
+                        </select>
+                    </div>
+                </div>
+                <button onclick="calculate()">Simulate</button>
+                <div id="errorMessage"></div>
+            </div>
+            <div class="output-box">
+                <div class="results-container">
+                    <div class="numerical-results">
+                        <h4><center>Numerical Values</h4>
+                        <div id="numericalResults"></div>
+                    </div>
+                    <div class="chart-container">
+                        <h3><center>GraphicalRepresentation</h3>
+                        <canvas id="resultChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+    <script>
+        let chart = null;
+
+        function calculate() {
+            try {
+                document.getElementById('errorMessage').innerHTML = '';
+
+                const funcStr = document.getElementById('function').value;
+                const xStart = parseFloat(document.getElementById('xStart').value);
+                const xEnd = parseFloat(document.getElementById('xEnd').value);
+                const numPoints = parseInt(document.getElementById('numPoints').value);
+                const method = document.getElementById('method').value;
+
+                if (numPoints < 3) {
+                    throw new Error('Number of points must be at least 3');
+                }
+
+                const dx = (xEnd - xStart) / (numPoints - 1);
+                const xPoints = Array.from({length: numPoints}, (_, i) => xStart + i * dx);
+
+                const func = math.compile(funcStr);
+                const yPoints = xPoints.map(x => func.evaluate({x: x}));
+
+                const derivativePoints = [];
+                for (let i = 0; i < xPoints.length; i++) {
+                    let derivative;
+                    if (method === 'forward' && i < xPoints.length - 1) {
+                        derivative = (yPoints[i + 1] - yPoints[i]) / dx;
+                    } else if (method === 'backward' && i > 0) {
+                        derivative = (yPoints[i] - yPoints[i - 1]) / dx;
+                    } else if (method === 'central' && i > 0 && i < xPoints.length - 1) {
+                        derivative = (yPoints[i + 1] - yPoints[i - 1]) / (2 * dx);
+                    }
+                    if (derivative !== undefined) {
+                        derivativePoints.push({x: xPoints[i], y: derivative});
+                    }
+                }
+
+                updateChart(xPoints, yPoints, derivativePoints);
+                displayResults(derivativePoints);
+            } catch (error) {
+                document.getElementById('errorMessage').innerHTML = 'Error: ' + error.message;
+            }
+        }
+
+        function updateChart(xPoints, yPoints, derivativePoints) {
+            if (chart) {
+                chart.destroy();
+            }
+
+            const ctx = document.getElementById('resultChart').getContext('2d');
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Original Function',
+                        data: xPoints.map((x, i) => ({x: x, y: yPoints[i]})),
+                        borderColor: 'blue',
+                        fill: false
+                    }, {
+                        label: 'Numerical Derivative',
+                        data: derivativePoints,
+                        borderColor: 'red',
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            position: 'bottom',
+                            title: {
+                                display: true,
+                                text: 'x'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'y'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function displayResults(derivativePoints) {
+            const resultsDiv = document.getElementById('numericalResults');
+            const table = document.createElement('table');
+            table.innerHTML = `
+                <tr>
+                    <th>x</th>
+                    <th>f'(x)</th>
+                </tr>
+                ${derivativePoints.map(point => `
+                    <tr>
+                        <td>${point.x.toFixed(4)}</td>
+                        <td>${point.y.toFixed(4)}</td>
+                    </tr>
+                `).join('')}
+            `;
+            resultsDiv.innerHTML = '';
+            resultsDiv.appendChild(table);
+        }
+
+        // Calculate initial results
+        calculate();
+    </script>
 </body>
 </html>
