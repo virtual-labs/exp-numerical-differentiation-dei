@@ -1,0 +1,39 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "What is the value of ddx (sin⁡ x3 cos⁡ x2)?",
+      "answers": {
+        "a": " 3x2 cos x2 cos⁡ x3 + 2x sin⁡ x3 sin x2",
+        "b": "3x2 cos⁡ x2 cos⁡ x3 – 2x sin⁡ x3 sin x2",
+        "c": "2x cos x2 cos⁡ x3 – 2x sin⁡ x3 sin x2",
+        "d": "2x cos x2 cos⁡ x3 + 3x2 sin⁡ x3 sin x2"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "what is the value of ddx(cos2⁡ x tan⁡ x) at x = 1?",
+      "answers": {
+        "a": "⁡-1",
+        "b": "0",
+        "c": "-2",
+        "d": "1"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    }
+  ]
+}
