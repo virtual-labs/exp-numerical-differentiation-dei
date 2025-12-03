@@ -2,34 +2,164 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "The derivative of ln⁡ ex = 1. Is the statement true or false?",
-      "answers": {
-        "a": "yes",
-        "b": "no"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "what is the value of tan 45?",
+      "question": "What is the derivative of x with respect to x?",
       "answers": {
         "a": "1",
-        "b": "1/2",
+        "b": "x",
         "c": "0",
-        "d": "error"
+        "d": "2x"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "a": "The derivative of x is always 1.",
         "b": "Explanation 2",
         "c": "Explanation 2",
         "d": "Explanation 2"
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      "correctAnswer": "a"
+    },
+    {
+      "question": "What is the value of tan 45°?",
+      "answers": {
+        "a": "1",
+        "b": "0",
+        "c": "√3",
+        "d": "2"
+      },
+      "explanations": {
+        "a": "Tan 45° equals 1.",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a"
+    },
+    {
+      "question": "Which represents rate of change in a function?",
+      "answers": {
+        "a": "Derivative",
+        "b": "Integral",
+        "c": "Limit",
+        "d": "Series"
+      },
+      "explanations": {
+        "a": "Derivative measures rate of change.",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a"
+    },
+    {
+      "question": "What does differentiation give in a distance-time graph?",
+      "answers": {
+        "a": "Velocity",
+        "b": "Area",
+        "c": "Mass",
+        "d": "Displacement"
+      },
+      "explanations": {
+        "a": "Velocity is derivative of distance with respect to time.",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a"
+    },
+    {
+      "question": "Which rule is used for derivative of product of two functions?",
+      "answers": {
+        "a": "Product Rule",
+        "b": "Chain Rule",
+        "c": "Quotient Rule",
+        "d": "Power Rule"
+      },
+      "explanations": {
+        "a": "Used when multiplying functions.",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a"
+    },
+    {
+      "question": "Which trigonometric function has a derivative equal to cos(x)?",
+      "answers": {
+        "a": "sin(x)",
+        "b": "tan(x)",
+        "c": "cot(x)",
+        "d": "sec(x)"
+      },
+      "explanations": {
+        "a": "Derivative of sin(x) is cos(x).",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a"
+    },
+    {
+      "question": "The derivative represents the slope of:",
+      "answers": {
+        "a": "The tangent line",
+        "b": "The normal line",
+        "c": "The y-axis",
+        "d": "The x-axis"
+      },
+      "explanations": {
+        "a": "Derivative gives slope of tangent to curve.",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a"
+    },
+    {
+      "question": "Differentiation is mainly used to find:",
+      "answers": {
+        "a": "Slope and rate of change",
+        "b": "Volume",
+        "c": "Area",
+        "d": "Matrix operations"
+      },
+      "explanations": {
+        "a": "Derivative measures change.",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a"
+    },
+    {
+      "question": "Which function has a constant rate of change?",
+      "answers": {
+        "a": "Linear function",
+        "b": "Quadratic function",
+        "c": "Cubic function",
+        "d": "Exponential function"
+      },
+      "explanations": {
+        "a": "Slope of a linear function is constant.",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a"
+    },
+    {
+      "question": "Which branch of mathematics deals with derivative?",
+      "answers": {
+        "a": "Calculus",
+        "b": "Geometry",
+        "c": "Algebra",
+        "d": "Statistics"
+      },
+      "explanations": {
+        "a": "Derivative is a core part of calculus.",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a"
     }
   ]
 }
