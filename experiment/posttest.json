@@ -2,16 +2,16 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "What is the value of ddx (sin⁡ x3 cos⁡ x2)?",
+      "question": "Numerical differentiation is mainly used for?",
       "answers": {
-        "a": " 3x2 cos x2 cos⁡ x3 + 2x sin⁡ x3 sin x2",
-        "b": "3x2 cos⁡ x2 cos⁡ x3 – 2x sin⁡ x3 sin x2",
-        "c": "2x cos x2 cos⁡ x3 – 2x sin⁡ x3 sin x2",
-        "d": "2x cos x2 cos⁡ x3 + 3x2 sin⁡ x3 sin x2"
+        "a": "Finding values of integrals",
+        "b": "Estimating rate of change from discrete data",
+        "c": "Drawing 3D models",
+        "d": "Solving algebraic equations"
       },
       "explanations": {
         "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
+        "b": "Numerical differentiation helps estimate the derivative when only data points are available",
         "c": "Explanation 2",
         "d": "Explanation 2"
       },
@@ -19,20 +19,156 @@
       "difficulty": "beginner"
     },
     {
-      "question": "what is the value of ddx(cos2⁡ x tan⁡ x) at x = 1?",
+      "question": "Which method uses the next point to approximate the derivative?",
       "answers": {
-        "a": "⁡-1",
-        "b": "0",
-        "c": "-2",
-        "d": "1"
+        "a": "Forward Difference",
+        "b": "Backward Difference",
+        "c": "Central Difference",
+        "d": "Integration Method"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "a": "Forward difference uses the next point to compute the slope",
         "b": "Explanation 2",
         "c": "Explanation 2",
         "d": "Explanation 2"
       },
-      "correctAnswer": "d",
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Backward Difference method is especially useful at:",
+      "answers": {
+        "a": "The first point of the dataset",
+        "b": "The last point of the dataset",
+        "c": "Any point in the middle",
+        "d": "Points where function is unknown"
+      },
+      "explanations": {
+        "a": "Explanation 2",
+        "b": "Backward difference is used where forward difference cannot be applied, such as at the last data point",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Central Difference method provides:",
+      "answers": {
+        "a": "Lower accuracy than forward difference",
+        "b": "Higher accuracy because it uses both sides of the point",
+        "c": "Random estimation",
+        "d": "Accuracy only for first data point"
+      },
+      "explanations": {
+        "a": "Explanation 2",
+        "b": "Central difference uses data from previous and next points, improving accuracy",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Evenly spaced points mean:",
+      "answers": {
+        "a": "Data points are placed at equal distances",
+        "b": "Data values always increase",
+        "c": "Data is collected only at integer values",
+        "d": "Data points are randomly spaced"
+      },
+      "explanations": {
+        "a": "Step size remains constant between data points",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which difference method cannot be used at the boundaries?",
+      "answers": {
+        "a": "Forward Difference",
+        "b": "Backward Difference",
+        "c": "Central Difference",
+        "d": "Both Forward and Backward"
+      },
+      "explanations": {
+        "a": "Explanation 2",
+        "b": "Explanation 2",
+        "c": "Central difference needs points on both sides, so cannot be used at boundaries",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What happens if fewer points are used in differentiation?",
+      "answers": {
+        "a": "Accuracy increases",
+        "b": "Accuracy decreases",
+        "c": "No change in result",
+        "d": "Derivative becomes zero"
+      },
+      "explanations": {
+        "a": "Explanation 2",
+        "b": "Larger spacing increases approximation error",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following is a major drawback of numerical differentiation?",
+      "answers": {
+        "a": "It is too slow",
+        "b": "It amplifies noise in data",
+        "c": "It needs powerful processors",
+        "d": "It cannot be applied in engineering"
+      },
+      "explanations": {
+        "a": "Explanation 2",
+        "b": "Small errors and noise get magnified when differentiating",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which parameter controls the spacing between data points?",
+      "answers": {
+        "a": "Start and End points",
+        "b": "Number of points",
+        "c": "Both A and B",
+        "d": "None of these"
+      },
+      "explanations": {
+        "a": "Explanation 2",
+        "b": "Explanation 2",
+        "c": "Together they determine equal spacing between points",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "In the simulator, the graph helps in:",
+      "answers": {
+        "a": "Comparing original function and its numerical derivative",
+        "b": "Deleting function values",
+        "c": "Storing data points",
+        "d": "Encrypting mathematical operations"
+      },
+      "explanations": {
+        "a": "Graph visually shows accuracy trends of derivative",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a",
       "difficulty": "beginner"
     }
   ]
