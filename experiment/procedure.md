@@ -1,10 +1,27 @@
 ### Procedure
 
-1. Select or enter the desired function in the input box provided under "Function f(x)".
-2. Enter the start point and end point to define the range of evaluation.
-3. Specify the number of evenly spaced points to be considered.
-4. Choose the numerical differentiation method from the dropdown menu (Forward Difference, Backward Difference, or Central Difference).
-5. Click on the "Simulate" button to run the differentiation process.
-6. The table on the right will display the numerical derivative values for each point.
-7. View the graphical representation to compare the original function and the numerical derivative visually.
-8. Move the cursor on the graph to observe the values at specific data points.
+1. Open the simulation interface for the numerical differentiation experiment.
+
+2. Enter the mathematical function to be differentiated and specify the range of the independent variable with evenly spaced data points.
+
+3. Define the step size or ensure that the spacing between successive data points is uniform.
+
+4. Select the numerical differentiation method from the available options:
+
+- Forward Difference Method
+
+- Backward Difference Method
+
+- Central Difference Method
+
+5. Click the Submit button to execute the selected numerical differentiation method.
+
+6. Observe the numerical values of the derivative displayed in tabular form.
+
+7. Compare the numerical derivative values obtained using different differentiation methods.
+
+8. Analyze the graphical representation to compare the original function with its numerically approximated derivative.
+
+9. Repeat the experiment by varying the step size and differentiation method to study their effect on the accuracy of the derivative approximation.
+
+10. Record the observations and draw conclusions regarding the performance and accuracy of the numerical differentiation methods.
