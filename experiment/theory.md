@@ -1,42 +1,47 @@
-# Numerical Differentiation Using Evenly Spaced Points
+## Theory
 
-## Introduction
-Numerical differentiation is a technique used to estimate the rate of change of a function when the function values are available only at specific data points. In many scientific and engineering applications, we do not always have the exact mathematical formula or it may be too complex to differentiate. Instead, we rely on sampled values of the function at evenly spaced points. Numerical differentiation helps us calculate approximate derivatives from such data.
+In many scientific and engineering problems, the analytical form of a function may not be available, and the function values are known only at discrete points obtained through experiments or numerical simulations. In such cases, numerical differentiation is used to approximate the derivative of the function.
 
-## Evenly Spaced Points
-In practical scenarios, data is often collected at equal intervals. The gap between two consecutive points remains constant. This uniform spacing allows us to apply standard numerical methods easily and consistently.
+Let the function values be known at equally spaced points:
 
-## Methods of Numerical Differentiation
-Several methods exist for estimating the derivative of a function using discrete data points. This experiment focuses on three commonly used techniques:
+<img width="146" height="32" alt="image" src="https://github.com/user-attachments/assets/bb3e1907-32f2-472d-a5fc-48ab324b6583" />
 
-### 1. Forward Difference Method
-The slope at a point is estimated by comparing the value at that point with the next point. This method is simple and widely used but can have a larger error compared to more advanced techniques. It is usually applied near the beginning of the dataset.
+with a constant spacing:
 
-### 2. Backward Difference Method
-The slope at a point is calculated using the value at that point and the previous point. This method is useful at the end of the dataset where forward difference cannot be applied.
+<img width="152" height="35" alt="image" src="https://github.com/user-attachments/assets/4f50c301-13ad-422c-b834-b5f975a2bd38" />
 
-### 3. Central Difference Method
-This method uses information from both the previous and the next points around the point of interest. Because it considers both sides, it provides a more accurate and balanced estimation of the derivative. However, it cannot be used for the first and last data points.
+Numerical differentiation approximates the derivative using finite difference methods, which are derived from Taylor series expansions.
 
-## Why These Methods Are Important
-Numerical differentiation plays a key role in real-world analysis including:
-- Studying motion to determine velocity and acceleration from position data
-- Monitoring engineering systems for changes in physical measurements
-- Analysing scientific signals such as temperature, pressure, or electrical variations
-- Supporting data-driven decision making where direct calculus is not possible
+### Forward Difference Method
 
-## Observation Through Simulator
-In this experiment, users can enter a function and specify:
-- Starting and ending points
-- Total number of evenly spaced sample points
-- Choice of differentiation method
+The forward difference approximation of the first derivative at Xi is given by:
 
-The simulator displays:
-- A table showing the estimated derivative values
-- A graph comparing the original function and the calculated derivative
+<img width="280" height="92" alt="image" src="https://github.com/user-attachments/assets/80d999e9-b9d0-4747-8441-dfc0c74977de" />
 
-This visual output helps the user understand how different numerical methods affect accuracy and representation.
+This method uses the function value at the current point and the next point. It is simple to implement but generally provides lower accuracy.
 
-## Conclusion
-Numerical differentiation with evenly spaced points is a practical and efficient approach when dealing with real-world data. Forward and backward difference methods are simple to use but can have higher error, while the central difference method offers better accuracy. Choosing the right technique depends on the position of data points and the level of precision required.
+### Backward Difference Method
+The backward difference approximation of the first derivative at Xi is given by:
+
+<img width="285" height="93" alt="image" src="https://github.com/user-attachments/assets/2bac4f83-32dc-49ca-8d4e-246811a80555" />
+
+This method uses the function value at the current point and the previous point and is useful when forward data points are unavailable.
+
+### Central Difference Method
+The central difference approximation of the first derivative at Xi is given by:
+
+<img width="317" height="90" alt="image" src="https://github.com/user-attachments/assets/ec39bcea-ba20-485e-ae1f-f89f6fcedb5c" />
+
+This method uses data points on both sides of the point of interest and provides better accuracy compared to forward and backward difference methods.
+
+### Importance of Numerical Differentiation
+
+Numerical differentiation is widely used in:
+
+- Estimation of velocity and acceleration from discrete position data
+
+- Analysis of experimental data
+
+- Scientific and engineering simulations
+###This method uses the function value at the current point and the previous point and is useful when forward data points are unavailable.
 
