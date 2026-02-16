@@ -10,165 +10,165 @@
         "d": "Solving algebraic equations"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Numerical differentiation helps estimate the derivative when only data points are available",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Integration computes area, not derivative.",
+        "b": "Correct: Numerical differentiation estimates derivative from data.",
+        "c": "Not related.",
+        "d": "Not related."
       },
       "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "Which method uses the next point to approximate the derivative?",
+      "question": "The truncation error in Forward Difference method is of order:",
       "answers": {
-        "a": "Forward Difference",
-        "b": "Backward Difference",
-        "c": "Central Difference",
-        "d": "Integration Method"
+        "a": "O(h)",
+        "b": "O(h²)",
+        "c": "O(1)",
+        "d": "O(h³)"
       },
       "explanations": {
-        "a": "Forward difference uses the next point to compute the slope",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Correct: Forward difference has first-order truncation error.",
+        "b": "Central difference has O(h²).",
+        "c": "Incorrect.",
+        "d": "Incorrect."
       },
       "correctAnswer": "a",
-      "difficulty": "beginner"
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Central Difference method provides higher accuracy because:",
+      "answers": {
+        "a": "It uses more data points",
+        "b": "It cancels first-order error terms",
+        "c": "It reduces rounding error completely",
+        "d": "It uses integration"
+      },
+      "explanations": {
+        "a": "Not the primary reason.",
+        "b": "Correct: Symmetry cancels first-order error terms.",
+        "c": "Rounding error still exists.",
+        "d": "Not related."
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "If step size h becomes extremely small, the total error may increase due to:",
+      "answers": {
+        "a": "Increased truncation error",
+        "b": "Increased rounding error",
+        "c": "Polynomial degree",
+        "d": "Loss of data points"
+      },
+      "explanations": {
+        "a": "Truncation error decreases as h decreases.",
+        "b": "Correct: Rounding error dominates for very small h.",
+        "c": "Not directly relevant.",
+        "d": "Not relevant."
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
     },
     {
       "question": "Backward Difference method is especially useful at:",
       "answers": {
         "a": "The first point of the dataset",
         "b": "The last point of the dataset",
-        "c": "Any point in the middle",
-        "d": "Points where function is unknown"
+        "c": "Any interior point",
+        "d": "Points where function is continuous"
       },
       "explanations": {
-        "a": "Explanation 2",
-        "b": "Backward difference is used where forward difference cannot be applied, such as at the last data point",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Forward difference is used there.",
+        "b": "Correct: Backward difference is used at the last point.",
+        "c": "Central difference is better inside.",
+        "d": "Not relevant."
       },
       "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "Central Difference method provides:",
+      "question": "The optimal step size in numerical differentiation is determined by:",
       "answers": {
-        "a": "Lower accuracy than forward difference",
-        "b": "Higher accuracy because it uses both sides of the point",
-        "c": "Random estimation",
-        "d": "Accuracy only for first data point"
+        "a": "Only truncation error",
+        "b": "Only rounding error",
+        "c": "Balance between truncation and rounding errors",
+        "d": "Graph resolution"
       },
       "explanations": {
-        "a": "Explanation 2",
-        "b": "Central difference uses data from previous and next points, improving accuracy",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Not sufficient alone.",
+        "b": "Not sufficient alone.",
+        "c": "Correct: Optimal h balances both errors.",
+        "d": "Not relevant."
       },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
+      "correctAnswer": "c",
+      "difficulty": "advanced"
     },
     {
-      "question": "Evenly spaced points mean:",
+      "question": "Numerical differentiation amplifies noise because:",
       "answers": {
-        "a": "Data points are placed at equal distances",
-        "b": "Data values always increase",
-        "c": "Data is collected only at integer values",
-        "d": "Data points are randomly spaced"
+        "a": "Differentiation increases sensitivity to small fluctuations",
+        "b": "It reduces function smoothness",
+        "c": "It removes data points",
+        "d": "It applies integration"
       },
       "explanations": {
-        "a": "Step size remains constant between data points",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Correct: Differentiation magnifies small data variations.",
+        "b": "Not the main reason.",
+        "c": "Not correct.",
+        "d": "Incorrect."
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "The second derivative using central difference has order of accuracy:",
+      "answers": {
+        "a": "O(h)",
+        "b": "O(h²)",
+        "c": "O(h³)",
+        "d": "O(1)"
+      },
+      "explanations": {
+        "a": "Incorrect.",
+        "b": "Correct: Standard second derivative central formula is O(h²).",
+        "c": "Incorrect.",
+        "d": "Incorrect."
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "In practical engineering applications, numerical differentiation is commonly used to compute:",
+      "answers": {
+        "a": "Velocity and acceleration from position data",
+        "b": "Matrix determinants",
+        "c": "Eigenvalues only",
+        "d": "Integral transforms"
+      },
+      "explanations": {
+        "a": "Correct: Derivatives give velocity and acceleration.",
+        "b": "Not related.",
+        "c": "Not directly related.",
+        "d": "Not related."
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "Which difference method cannot be used at the boundaries?",
+      "question": "Which method cannot be applied directly at boundary points?",
       "answers": {
         "a": "Forward Difference",
         "b": "Backward Difference",
         "c": "Central Difference",
-        "d": "Both Forward and Backward"
+        "d": "All methods"
       },
       "explanations": {
-        "a": "Explanation 2",
-        "b": "Explanation 2",
-        "c": "Central difference needs points on both sides, so cannot be used at boundaries",
-        "d": "Explanation 2"
+        "a": "Applicable at first point.",
+        "b": "Applicable at last point.",
+        "c": "Correct: Central difference needs both sides.",
+        "d": "Incorrect."
       },
       "correctAnswer": "c",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "What happens if fewer points are used in differentiation?",
-      "answers": {
-        "a": "Accuracy increases",
-        "b": "Accuracy decreases",
-        "c": "No change in result",
-        "d": "Derivative becomes zero"
-      },
-      "explanations": {
-        "a": "Explanation 2",
-        "b": "Larger spacing increases approximation error",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "Which of the following is a major drawback of numerical differentiation?",
-      "answers": {
-        "a": "It is too slow",
-        "b": "It amplifies noise in data",
-        "c": "It needs powerful processors",
-        "d": "It cannot be applied in engineering"
-      },
-      "explanations": {
-        "a": "Explanation 2",
-        "b": "Small errors and noise get magnified when differentiating",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "Which parameter controls the spacing between data points?",
-      "answers": {
-        "a": "Start and End points",
-        "b": "Number of points",
-        "c": "Both A and B",
-        "d": "None of these"
-      },
-      "explanations": {
-        "a": "Explanation 2",
-        "b": "Explanation 2",
-        "c": "Together they determine equal spacing between points",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "In the simulator, the graph helps in:",
-      "answers": {
-        "a": "Comparing original function and its numerical derivative",
-        "b": "Deleting function values",
-        "c": "Storing data points",
-        "d": "Encrypting mathematical operations"
-      },
-      "explanations": {
-        "a": "Graph visually shows accuracy trends of derivative",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
       "difficulty": "beginner"
     }
   ]
