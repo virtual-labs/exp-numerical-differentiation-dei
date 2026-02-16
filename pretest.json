@@ -1,0 +1,165 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "The Forward Difference approximation of f'(x) primarily uses:",
+      "answers": {
+        "a": "Function value at x and x+h",
+        "b": "Function value at x-h only",
+        "c": "Second derivative",
+        "d": "Integral value"
+      },
+      "explanations": {
+        "a": "Correct: Forward difference uses f(x+h) and f(x).",
+        "b": "That corresponds to backward difference.",
+        "c": "Not required directly.",
+        "d": "Not related to differentiation."
+      },
+      "correctAnswer": "a"
+    },
+    {
+      "question": "The order of accuracy of the Forward Difference method is:",
+      "answers": {
+        "a": "O(h)",
+        "b": "O(h²)",
+        "c": "O(1)",
+        "d": "O(h³)"
+      },
+      "explanations": {
+        "a": "Correct: Forward difference has first-order accuracy.",
+        "b": "Central difference has O(h²).",
+        "c": "Incorrect.",
+        "d": "Incorrect."
+      },
+      "correctAnswer": "a"
+    },
+    {
+      "question": "Which numerical differentiation method generally gives higher accuracy?",
+      "answers": {
+        "a": "Forward Difference",
+        "b": "Backward Difference",
+        "c": "Central Difference",
+        "d": "Linear Interpolation"
+      },
+      "explanations": {
+        "a": "Less accurate than central difference.",
+        "b": "Also first-order accurate.",
+        "c": "Correct: Central difference is O(h²).",
+        "d": "Not a differentiation method."
+      },
+      "correctAnswer": "c"
+    },
+    {
+      "question": "Reducing the step size h in numerical differentiation:",
+      "answers": {
+        "a": "Always increases accuracy",
+        "b": "Always decreases accuracy",
+        "c": "May increase rounding error",
+        "d": "Has no effect"
+      },
+      "explanations": {
+        "a": "Too small h increases rounding error.",
+        "b": "Not always true.",
+        "c": "Correct: Very small h amplifies rounding error.",
+        "d": "Incorrect."
+      },
+      "correctAnswer": "c"
+    },
+    {
+      "question": "Numerical differentiation is sensitive to:",
+      "answers": {
+        "a": "Noise in data",
+        "b": "Matrix determinant",
+        "c": "Polynomial degree only",
+        "d": "Graph plotting style"
+      },
+      "explanations": {
+        "a": "Correct: Differentiation amplifies noise.",
+        "b": "Not related.",
+        "c": "Not the only factor.",
+        "d": "Not relevant."
+      },
+      "correctAnswer": "a"
+    },
+    {
+      "question": "The Central Difference formula for first derivative uses:",
+      "answers": {
+        "a": "f(x+h) and f(x-h)",
+        "b": "Only f(x+h)",
+        "c": "Only f(x-h)",
+        "d": "Integral values"
+      },
+      "explanations": {
+        "a": "Correct: Central difference uses symmetric points.",
+        "b": "Forward difference only.",
+        "c": "Backward difference only.",
+        "d": "Not applicable."
+      },
+      "correctAnswer": "a"
+    },
+    {
+      "question": "The truncation error in numerical differentiation arises due to:",
+      "answers": {
+        "a": "Ignoring higher-order terms in Taylor expansion",
+        "b": "Matrix multiplication",
+        "c": "Graph plotting error",
+        "d": "Integration limits"
+      },
+      "explanations": {
+        "a": "Correct: Taylor series truncation causes error.",
+        "b": "Not related.",
+        "c": "Not relevant.",
+        "d": "Not related."
+      },
+      "correctAnswer": "a"
+    },
+    {
+      "question": "Which of the following is a second-order accurate approximation?",
+      "answers": {
+        "a": "Forward Difference",
+        "b": "Backward Difference",
+        "c": "Central Difference",
+        "d": "Linear Approximation"
+      },
+      "explanations": {
+        "a": "First-order accurate.",
+        "b": "First-order accurate.",
+        "c": "Correct: Central difference has O(h²).",
+        "d": "Not necessarily second-order."
+      },
+      "correctAnswer": "c"
+    },
+    {
+      "question": "Numerical differentiation is widely used in:",
+      "answers": {
+        "a": "Velocity and acceleration estimation",
+        "b": "Matrix inversion",
+        "c": "Area calculation only",
+        "d": "Sorting algorithms"
+      },
+      "explanations": {
+        "a": "Correct: Used to compute velocity and acceleration from data.",
+        "b": "Not related.",
+        "c": "That relates to integration.",
+        "d": "Not relevant."
+      },
+      "correctAnswer": "a"
+    },
+    {
+      "question": "If h becomes extremely small, numerical differentiation error may increase due to:",
+      "answers": {
+        "a": "Truncation error",
+        "b": "Rounding error",
+        "c": "Polynomial degree",
+        "d": "Graph resolution"
+      },
+      "explanations": {
+        "a": "Truncation error decreases as h decreases.",
+        "b": "Correct: Rounding error increases when h is very small.",
+        "c": "Not directly responsible.",
+        "d": "Not relevant."
+      },
+      "correctAnswer": "b"
+    }
+  ]
+}

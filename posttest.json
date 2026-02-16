@@ -1,0 +1,175 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Numerical differentiation is mainly used for?",
+      "answers": {
+        "a": "Finding values of integrals",
+        "b": "Estimating rate of change from discrete data",
+        "c": "Drawing 3D models",
+        "d": "Solving algebraic equations"
+      },
+      "explanations": {
+        "a": "Integration computes area, not derivative.",
+        "b": "Correct: Numerical differentiation estimates derivative from data.",
+        "c": "Not related.",
+        "d": "Not related."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The truncation error in Forward Difference method is of order:",
+      "answers": {
+        "a": "O(h)",
+        "b": "O(h²)",
+        "c": "O(1)",
+        "d": "O(h³)"
+      },
+      "explanations": {
+        "a": "Correct: Forward difference has first-order truncation error.",
+        "b": "Central difference has O(h²).",
+        "c": "Incorrect.",
+        "d": "Incorrect."
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Central Difference method provides higher accuracy because:",
+      "answers": {
+        "a": "It uses more data points",
+        "b": "It cancels first-order error terms",
+        "c": "It reduces rounding error completely",
+        "d": "It uses integration"
+      },
+      "explanations": {
+        "a": "Not the primary reason.",
+        "b": "Correct: Symmetry cancels first-order error terms.",
+        "c": "Rounding error still exists.",
+        "d": "Not related."
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "If step size h becomes extremely small, the total error may increase due to:",
+      "answers": {
+        "a": "Increased truncation error",
+        "b": "Increased rounding error",
+        "c": "Polynomial degree",
+        "d": "Loss of data points"
+      },
+      "explanations": {
+        "a": "Truncation error decreases as h decreases.",
+        "b": "Correct: Rounding error dominates for very small h.",
+        "c": "Not directly relevant.",
+        "d": "Not relevant."
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Backward Difference method is especially useful at:",
+      "answers": {
+        "a": "The first point of the dataset",
+        "b": "The last point of the dataset",
+        "c": "Any interior point",
+        "d": "Points where function is continuous"
+      },
+      "explanations": {
+        "a": "Forward difference is used there.",
+        "b": "Correct: Backward difference is used at the last point.",
+        "c": "Central difference is better inside.",
+        "d": "Not relevant."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The optimal step size in numerical differentiation is determined by:",
+      "answers": {
+        "a": "Only truncation error",
+        "b": "Only rounding error",
+        "c": "Balance between truncation and rounding errors",
+        "d": "Graph resolution"
+      },
+      "explanations": {
+        "a": "Not sufficient alone.",
+        "b": "Not sufficient alone.",
+        "c": "Correct: Optimal h balances both errors.",
+        "d": "Not relevant."
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Numerical differentiation amplifies noise because:",
+      "answers": {
+        "a": "Differentiation increases sensitivity to small fluctuations",
+        "b": "It reduces function smoothness",
+        "c": "It removes data points",
+        "d": "It applies integration"
+      },
+      "explanations": {
+        "a": "Correct: Differentiation magnifies small data variations.",
+        "b": "Not the main reason.",
+        "c": "Not correct.",
+        "d": "Incorrect."
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "The second derivative using central difference has order of accuracy:",
+      "answers": {
+        "a": "O(h)",
+        "b": "O(h²)",
+        "c": "O(h³)",
+        "d": "O(1)"
+      },
+      "explanations": {
+        "a": "Incorrect.",
+        "b": "Correct: Standard second derivative central formula is O(h²).",
+        "c": "Incorrect.",
+        "d": "Incorrect."
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "In practical engineering applications, numerical differentiation is commonly used to compute:",
+      "answers": {
+        "a": "Velocity and acceleration from position data",
+        "b": "Matrix determinants",
+        "c": "Eigenvalues only",
+        "d": "Integral transforms"
+      },
+      "explanations": {
+        "a": "Correct: Derivatives give velocity and acceleration.",
+        "b": "Not related.",
+        "c": "Not directly related.",
+        "d": "Not related."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which method cannot be applied directly at boundary points?",
+      "answers": {
+        "a": "Forward Difference",
+        "b": "Backward Difference",
+        "c": "Central Difference",
+        "d": "All methods"
+      },
+      "explanations": {
+        "a": "Applicable at first point.",
+        "b": "Applicable at last point.",
+        "c": "Correct: Central difference needs both sides.",
+        "d": "Incorrect."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    }
+  ]
+}
